@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://drh70olucag67"]
+
+[ext_resource type="Texture2D" uid="uid://s1q72iflaq2o" path="res://as/boy-32-64-walkt.png" id="1_b8eoc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6o3a7"]
+atlas = ExtResource("1_b8eoc")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3jevd"]
+atlas = ExtResource("1_b8eoc")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hn42w"]
+atlas = ExtResource("1_b8eoc")
+region = Rect2(64, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b5ct7"]
+atlas = ExtResource("1_b8eoc")
+region = Rect2(96, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nnmr4"]
+atlas = ExtResource("1_b8eoc")
+region = Rect2(128, 0, 32, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ogq8d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6o3a7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3jevd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hn42w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b5ct7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nnmr4")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=788348076]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=227995733]
+sprite_frames = SubResource("SpriteFrames_ogq8d")
+frame = 3
+frame_progress = 0.876241
