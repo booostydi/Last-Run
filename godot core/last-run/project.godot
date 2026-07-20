@@ -43,6 +43,15 @@ move_right={
 ]
 }
 
+[layer_names]
+
+2d_render/layer_1="wall"
+2d_render/layer_2="player"
+2d_render/layer_3="enemy"
+2d_render/layer_4="bullet"
+2d_render/layer_5="tree"
+2d_render/layer_6="radius"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
