@@ -4,8 +4,10 @@
 [ext_resource type="Script" uid="uid://bfbwecilisne" path="res://player.gd" id="2_u5sy4"]
 [ext_resource type="Texture2D" uid="uid://duwslgstr7fdl" path="res://assets/player/boy-32-64-idele.png" id="3_u5sy4"]
 [ext_resource type="Texture2D" uid="uid://di530yc3812fg" path="res://assets/player/boy-32x64-idle-walk-mirror.png" id="4_p57ef"]
+[ext_resource type="Script" uid="uid://be0p8qweitti0" path="res://scripts/components/health_component.gd" id="5_u5sy4"]
 [ext_resource type="PackedScene" uid="uid://0yo530p5q660" path="res://scenes/wall.tscn" id="5_vtaks"]
 [ext_resource type="PackedScene" uid="uid://c1yhsi4eb3gqa" path="res://scenes/wall2.tscn" id="6_kvpfn"]
+[ext_resource type="Script" uid="uid://06dv6dlhikft" path="res://scripts/components/spawner.gd" id="9_0tnpc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0tnpc"]
 atlas = ExtResource("3_u5sy4")
@@ -86,7 +88,7 @@ animations = [{
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_32gbi"]
 height = 58.0
 
-[node name="Node2D" type="Node2D" unique_id=1517849647]
+[node name="Game" type="Node2D" unique_id=1517849647]
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1097337712]
 position = Vector2(-1, 0)
@@ -106,6 +108,22 @@ shape = SubResource("CapsuleShape2D_32gbi")
 zoom = Vector2(1.5, 1.5)
 position_smoothing_enabled = true
 position_smoothing_speed = 25.0
+
+[node name="HealthComponent" type="Node2D" parent="Player" unique_id=822900602]
+script = ExtResource("5_u5sy4")
+
+[node name="Spawner" type="Node2D" parent="." unique_id=396966285 node_paths=PackedStringArray("spawn_top_left", "spawn_bottom_right")]
+script = ExtResource("9_0tnpc")
+spawn_top_left = NodePath("SpawnTopLeft")
+spawn_bottom_right = NodePath("SpawnBottomRight")
+
+[node name="SpawnTopLeft" type="Marker2D" parent="Spawner" unique_id=1067623658]
+position = Vector2(-885, -476)
+
+[node name="SpawnBottomRight" type="Marker2D" parent="Spawner" unique_id=1893636626]
+position = Vector2(906, 495)
+
+[node name="SpawnTimer" type="Timer" parent="Spawner" unique_id=1430264722]
 
 [node name="wall" parent="." unique_id=367672671 instance=ExtResource("5_vtaks")]
 
