@@ -89,7 +89,6 @@ height = 58.0
 [node name="Node2D" type="Node2D" unique_id=1517849647]
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1097337712]
-position = Vector2(-1, 0)
 texture = ExtResource("1_p57ef")
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=1048429116]
@@ -107,12 +106,25 @@ zoom = Vector2(1.5, 1.5)
 position_smoothing_enabled = true
 position_smoothing_speed = 25.0
 
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="Player" unique_id=50151260]
+position = Vector2(-88, -88)
+rect = Rect2(-10, -10, 196, 196)
+enable_mode = 1
+
 [node name="wall" parent="." unique_id=367672671 instance=ExtResource("5_vtaks")]
+light_mask = 4
+visibility_layer = 4
 
 [node name="wall2" parent="." unique_id=1806628270 instance=ExtResource("5_vtaks")]
+light_mask = 4
+visibility_layer = 4
 position = Vector2(0, 1100)
 
 [node name="wall3" parent="." unique_id=611860019 instance=ExtResource("6_kvpfn")]
+collision_layer = 4
+collision_mask = 4
 
 [node name="wall4" parent="." unique_id=586795284 instance=ExtResource("6_kvpfn")]
+light_mask = 4
+visibility_layer = 4
 position = Vector2(-1940, 0)
