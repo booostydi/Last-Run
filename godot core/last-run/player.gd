@@ -4,6 +4,7 @@ extends CharacterBody2D
 @export var speed: float = 250.0
 @export var acceleration: float = 1500.0
 @export var friction: float = 1200.0
+@onready var sprite := $AnimatedSprite2D
 
 func _physics_process(delta: float) -> void:
 	# 1. Получаем направление движения (WASD или стрелки)
@@ -24,8 +25,7 @@ func _physics_process(delta: float) -> void:
 	# 4. Управление анимацией
 	_update_animation(input_dir)
 
-func _update_animation(direction: Vector2) -> void:
-	var sprite = $AnimatedSprite2D
+func _update_animation(direction):
 	
 	if direction != Vector2.ZERO:
 		# Отзеркаливаем спрайт, если идем влево
