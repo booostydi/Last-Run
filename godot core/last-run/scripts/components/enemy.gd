@@ -6,7 +6,7 @@ extends CharacterBody2D
 @export var attack_cooldown: float = 1.0
 
 # Имена анимаций — ПОСМОТРИ в своём AnimatedSprite2D и впиши точно как там
-@export var walk_anim: StringName = &"walk"
+@export var run_anim: StringName = &"run"
 @export var attack_anim: StringName = &"attack"
 @export var idle_anim: StringName = &"idle"
 
@@ -48,11 +48,11 @@ func _physics_process(_delta: float) -> void:
 		if sprite.animation != attack_anim:
 			sprite.play(attack_anim)
 	else:
-		# === ПРЕСЛЕДОВАНИЕ ===
+		# === ПРЕСЛЕДОВАНИЕ - RUN ===
 		velocity = dir.normalized() * speed
 		move_and_slide()
-		if sprite.animation != walk_anim:
-			sprite.play(walk_anim)
+		if sprite.animation != run_anim:
+			sprite.play(run_anim)
 
 func _try_find_player() -> void:
 	var nodes := get_tree().get_nodes_in_group("player")
